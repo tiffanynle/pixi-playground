@@ -1957,7 +1957,7 @@ packages:
 - pypi: .
   name: pixi-playground
   version: 0.1.0
-  sha256: 96ba1e52a2b17e080dbed00e19ed57a5bbb38408695bdb0c9cad720baaf8055c
+  sha256: 749072ce421f3c053e49c73e2da35496b35259a444275153ca094b9355c866f4
   requires_python: '>=3.11'
   editable: true
 - conda: https://conda.anaconda.org/conda-forge/noarch/pluggy-1.5.0-pyhd8ed1ab_1.conda

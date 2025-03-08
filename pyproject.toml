@@ -34,6 +34,7 @@ pixi_playground = { path = ".", editable = true }
 
 [tool.pixi.tasks]
 test = "pytest"
+lint = "ruff check && ruff format --check"
 
 [tool.pixi.dependencies]
 python = "3.11.*"
