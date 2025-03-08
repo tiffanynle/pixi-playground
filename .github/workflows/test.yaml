@@ -19,19 +19,19 @@ jobs:
     needs: [build]
     steps:
       - name: Runs Ruff lint checking
-        run: pixi run lint
-      - uses: prefix-dev/setup-pixi@v0.8.3
+        uses: prefix-dev/setup-pixi@v0.8.3
         with:
           pixi-version: v0.42.1
           cache: true
+      - run: pixi run lint
   test:
     name: Run Pytest
     runs-on: ubuntu-latest
     needs: [build]
     steps:
       - name: Runs Pytest
-        run: pixi run test
-      - uses: prefix-dev/setup-pixi@v0.8.3
+        uses: prefix-dev/setup-pixi@v0.8.3
         with:
           pixi-version: v0.42.1
           cache: true
+      - run: pixi run test
