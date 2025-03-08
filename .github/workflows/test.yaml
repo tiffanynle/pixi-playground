@@ -7,20 +7,27 @@ on:
       - main
 
 jobs:
-  test:
-    name: Run unit tests
+  build:
+    name: Build repo
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
       - uses: prefix-dev/setup-pixi@v0.8.3
         with:
           pixi-version: v0.42.1
           cache: true
-
+  lint:
+    name: Run Ruff linting
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
       - name: Runs Ruff lint checking
         run: pixi run lint
-
+  test:
+    name: Run Pytest
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
       - name: Runs Pytest
         run: pixi run test
