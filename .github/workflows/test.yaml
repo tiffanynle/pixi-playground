@@ -13,10 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: prefix-dev/setup-pixi@v0.8.3
-        with:
-          pixi-version: v0.42.1
-          cache: true
   lint:
     name: Run Ruff linting
     runs-on: ubuntu-latest
@@ -24,6 +20,10 @@ jobs:
     steps:
       - name: Runs Ruff lint checking
         run: pixi run lint
+      - uses: prefix-dev/setup-pixi@v0.8.3
+        with:
+          pixi-version: v0.42.1
+          cache: true
   test:
     name: Run Pytest
     runs-on: ubuntu-latest
@@ -31,3 +31,7 @@ jobs:
     steps:
       - name: Runs Pytest
         run: pixi run test
+      - uses: prefix-dev/setup-pixi@v0.8.3
+        with:
+          pixi-version: v0.42.1
+          cache: true
